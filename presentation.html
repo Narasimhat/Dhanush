@@ -1,0 +1,428 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>From Village to Sky | Dhanush Academy</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Reveal.js -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/reveal.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/theme/black.min.css">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+
+  <style>
+    /* TED-Style Custom CSS */
+    :root {
+      --ted-red: #E62B1E;
+      --pure-white: #ffffff;
+    }
+
+    body { background-color: #000; }
+
+    .reveal h1, .reveal h2, .reveal h3 {
+      font-family: 'Oswald', sans-serif;
+      text-transform: uppercase;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    .reveal p {
+      font-family: 'Open Sans', sans-serif;
+      font-size: clamp(1em, 2vw, 1.2em);
+      font-weight: 300;
+      line-height: 1.6;
+    }
+
+    /* Ensure sections fit on screen */
+    .reveal .slides section {
+      padding: 40px 60px;
+      box-sizing: border-box;
+      overflow: hidden;
+    }
+
+    /* Responsive headings */
+    .reveal h1 {
+      font-size: clamp(2em, 5vw, 3em) !important;
+    }
+
+    .reveal h2 {
+      font-size: clamp(1.5em, 4vw, 2.5em) !important;
+    }
+
+    .reveal h3 {
+      font-size: clamp(1.2em, 3vw, 2em) !important;
+    }
+
+    /* The "Big Statement" Text - Responsive */
+    .big-statement {
+      font-size: clamp(2em, 5vw, 3.5em) !important;
+      line-height: 1.2 !important;
+      text-shadow: 2px 2px 20px rgba(0,0,0,0.9);
+      word-wrap: break-word;
+      max-width: 100%;
+    }
+
+    /* The "Red Emphasis" text */
+    .accent { color: var(--ted-red); }
+
+    /* Dark overlay for text readability over images */
+    .backdrop-overlay {
+      background: rgba(0,0,0,0.5);
+      padding: 40px;
+      display: inline-block;
+      border-left: 5px solid var(--ted-red);
+    }
+
+    /* Minimal clean numbers - Responsive */
+    .stat-number {
+      font-size: clamp(3em, 8vw, 6em) !important;
+      color: var(--ted-red);
+      font-weight: 700;
+      font-family: 'Oswald', sans-serif;
+      line-height: 1;
+    }
+
+    .stat-label {
+      font-size: clamp(1em, 2vw, 1.5em);
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      opacity: 0.8;
+    }
+
+    /* Animations for young audiences */
+    .fade-in {
+      animation: fadeIn 1s ease-in;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .pulse {
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+    }
+
+    /* Question boxes for engagement - Responsive */
+    .question-box {
+      background: rgba(230, 43, 30, 0.2);
+      border: 2px solid var(--ted-red);
+      padding: clamp(15px, 3vw, 30px);
+      border-radius: 10px;
+      margin: clamp(15px, 3vw, 30px) 0;
+      font-size: clamp(1em, 2vw, 1.3em);
+      max-width: 100%;
+      box-sizing: border-box;
+    }
+
+    /* Interactive elements - Responsive */
+    .highlight-box {
+      background: rgba(230, 43, 30, 0.1);
+      padding: clamp(15px, 2vw, 20px);
+      border-left: 5px solid var(--ted-red);
+      margin: clamp(15px, 2vw, 20px) 0;
+      font-size: clamp(1em, 1.8vw, 1.2em);
+      max-width: 100%;
+      box-sizing: border-box;
+    }
+
+    /* Call to action */
+    .cta {
+      background: var(--ted-red);
+      color: white;
+      padding: 20px 40px;
+      display: inline-block;
+      border-radius: 5px;
+      font-size: 1.4em;
+      font-weight: bold;
+      margin-top: 30px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    /* Timeline visual */
+    .timeline-item {
+      opacity: 0;
+      animation: slideIn 0.8s ease-out forwards;
+    }
+
+    .timeline-item:nth-child(1) { animation-delay: 0.2s; }
+    .timeline-item:nth-child(2) { animation-delay: 0.4s; }
+    .timeline-item:nth-child(3) { animation-delay: 0.6s; }
+
+    @keyframes slideIn {
+      from {
+        opacity: 0;
+        transform: translateX(-50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    /* Fullscreen hint */
+    .fullscreen-hint {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: rgba(0,0,0,0.7);
+      color: white;
+      padding: 10px 15px;
+      border-radius: 5px;
+      font-size: 0.9em;
+      z-index: 1000;
+      opacity: 0.7;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+      <section data-background-color="#000">
+        <h3 style="letter-spacing: 5px; color: #888;">25 Years of Dhanush Academy</h3>
+        <h1 style="font-size: 2.5em;">From Village Dust<br>to <span class="accent">Global Skies</span></h1>
+        <p style="margin-top: 50px; font-size: 1em; opacity: 0.6;">A Journey of Perseverance, Passion, and Purpose</p>
+        <p style="margin-top: 20px; font-size: 0.9em; opacity: 0.5;">25th Anniversary Celebration</p>
+      </section>
+
+      <section data-background-image="images/students.jpg" data-background-opacity="0.4" 
+               data-background-image-fallback="https://images.unsplash.com/photo-1529070538774-1843cb3265df?q=80&w=2070&auto=format&fit=crop">
+        <div class="backdrop-overlay fade-in">
+          <h2 class="big-statement">I Was <span class="accent">You</span>.</h2>
+        </div>
+        <div class="question-box" style="margin-top: clamp(20px, 5vw, 50px); background: rgba(0,0,0,0.6);">
+          <p style="text-align: center; font-size: clamp(1.1em, 2.2vw, 1.4em);">Look around. 23 years ago, I sat exactly where you're sitting now.</p>
+        </div>
+        <aside class="notes">
+          Look around. When I see you, I don't just see students. I see myself. 23 years ago, I sat in your chair at Dhanush Academy, just like you are today.
+        </aside>
+      </section>
+
+      <section data-background-image="images/village.jpg" data-background-opacity="0.6"
+               data-background-image-fallback="https://images.unsplash.com/photo-1474302770737-173ee21bab63?q=80&w=2070&auto=format&fit=crop">
+        <h1 style="font-size: clamp(3em, 8vw, 5em);">1995</h1>
+        <p style="font-size: clamp(1em, 2vw, 1.2em);">A 10-year-old boy. A flying airplane. An impossible dream.</p>
+        <aside class="notes">
+          Picture a very rural village in 1995. A 10-year-old small kid staring at a flying aeroplane in the sky, dreaming about travelling. But reality hit hard - it seemed impossible in his situation.
+        </aside>
+      </section>
+
+      <section data-background-color="#111">
+        <h2 class="big-statement" style="color: #555;">"It's Impossible."</h2>
+        <div class="highlight-box" style="margin-top: clamp(20px, 5vw, 50px); background: rgba(255,255,255,0.1);">
+          <p style="font-size: clamp(1em, 2vw, 1.3em); line-height: 1.8;">
+            ✗ Self-doubt<br>
+            ✗ No encouragement<br>
+            ✗ No one from the village had studied abroad<br>
+            ✗ The ceiling felt too low
+          </p>
+        </div>
+        <div class="question-box" style="margin-top: clamp(20px, 4vw, 40px);">
+          <p style="text-align: center; font-size: clamp(1em, 2vw, 1.2em);">Have you ever felt this way?</p>
+        </div>
+        <aside class="notes">
+          Reality hit hard. Self-doubt crept in. There was a lack of encouragement - no one from that village or around had ever studied abroad. The dream seemed unreachable.
+        </aside>
+      </section>
+
+      <section data-background-image="images/teacher.jpg" data-background-opacity="0.5"
+               data-background-image-fallback="https://images.unsplash.com/photo-1495615080073-6b89c9839ce0?q=80&w=2000&auto=format&fit=crop">
+        <h3>23 Years Ago</h3>
+        <h1 class="big-statement" style="margin-top: clamp(20px, 4vw, 40px);">Dr. Srinivas<br>Ignited the <span class="accent">Fire</span></h1>
+        <p style="margin-top: clamp(15px, 3vw, 30px); font-size: clamp(1em, 2vw, 1.2em);">"Anyone can achieve anything if they want"</p>
+        <aside class="notes">
+          Then came Dr. Srinivas, the founder of Dhanush Academy. He didn't just teach - he ignited a fire. He showed that anyone can achieve anything if they want. He turned "Impossible" into "What If?"
+        </aside>
+      </section>
+
+      <section data-background-color="#E62B1E">
+        <div style="display: flex; justify-content: center; gap: clamp(50px, 10vw, 100px); align-items: center; flex-wrap: wrap;">
+          <div>
+            <div class="stat-number" style="color: white;">9</div>
+            <div class="stat-label" style="color: white;">Years</div>
+          </div>
+          <div>
+            <div class="stat-number" style="color: white;">4</div>
+            <div class="stat-label" style="color: white;">Attempts</div>
+          </div>
+        </div>
+        <p style="margin-top: clamp(25px, 5vw, 50px); color: white; font-size: clamp(1em, 2vw, 1.2em);">Before the PhD.</p>
+        <aside class="notes">
+          It wasn't easy. 9 years of struggle after my masters. 4 attempts at the PhD. I wanted to quit. But I had a reason to keep going - a strong motivation that sustained my passion.
+        </aside>
+      </section>
+
+      <section data-background-image="images/family.jpg" data-background-opacity="0.4"
+               data-background-image-fallback="https://images.unsplash.com/photo-1576086213369-97a306d36557?q=80&w=2000&auto=format&fit=crop">
+        <h2 style="text-align: left; margin-left: clamp(20px, 5vw, 50px); font-size: clamp(1.5em, 4vw, 2.5em);">Driven by<br><span class="accent">My Cousin Sister</span></h2>
+        <h2 style="text-align: right; margin-right: clamp(20px, 5vw, 50px); opacity: 0.5; font-size: clamp(1.5em, 4vw, 2.5em);">Affected by<br>Unknown Disease</h2>
+        <p style="margin-top: clamp(30px, 6vw, 60px); text-align: center; font-size: clamp(1em, 2vw, 1.2em);">She became my inspiration to develop therapies for rare diseases</p>
+        <aside class="notes">
+          My cousin sister's battle with an unknown rare disease gave me my purpose. To sustain passion, you need strong motivation - and she was mine. I didn't just study science; I wanted to weaponize it against suffering.
+        </aside>
+      </section>
+
+      <section data-background-image="images/germany.jpg" data-background-opacity="0.6"
+               data-background-image-fallback="https://images.unsplash.com/photo-1582719508461-905c673771fd?q=80&w=1925&auto=format&fit=crop">
+        <h3>Today</h3>
+        <h1 class="big-statement">GERMANY.</h1>
+        <p style="font-size: clamp(1em, 2vw, 1.2em);">Scientist. PhD. Developing therapeutics for rare diseases.</p>
+        <p style="margin-top: clamp(15px, 3vw, 30px); opacity: 0.8; font-size: clamp(1em, 2vw, 1.2em);">Solid foundation. Living the dream.</p>
+        <aside class="notes">
+          Today, that boy from the rural village is a scientist in Germany. I achieved my PhD at the 4th attempt, after 9 years of struggle. I am living the dream I once thought was impossible. The foundation is now solid.
+        </aside>
+      </section>
+
+      <section data-background-image="images/research.jpg" data-background-opacity="0.5"
+               data-background-image-fallback="https://images.unsplash.com/photo-1628258334105-2a0b3d6efee1?q=80&w=1974&auto=format&fit=crop">
+        <h2 class="big-statement">One Child.</h2>
+        <p style="font-size: clamp(1em, 2vw, 1.2em);">2 years old. Rare disease. Fighting for life.</p>
+        <p class="accent" style="font-weight: bold; margin-top: clamp(20px, 4vw, 40px); font-size: clamp(1.2em, 2.5vw, 1.5em);">In the next 5 years,<br>I hope to be part of saving them.</p>
+        <aside class="notes">
+          Right now, I am in the process of developing therapeutics for a 2-year-old child with a rare disease. In the next 5 years, I hope to be part of saving that kid's life. This is not just a job - it's a calling.
+        </aside>
+      </section>
+
+      <section data-background-color="#000">
+        <h2 style="font-size: clamp(2em, 5vw, 3em); line-height: 1.2;">
+          YOUR GEOGRAPHY<br>IS NOT YOUR<br><span class="accent">DESTINY.</span>
+        </h2>
+        <div class="timeline-item" style="margin-top: clamp(25px, 5vw, 50px);">
+          <div class="highlight-box">
+            <p style="font-size: clamp(1em, 2vw, 1.3em); line-height: 2;">
+              ✓ Self-doubt lies<br>
+              ✓ Passion leads<br>
+              ✓ Failure is part of the journey<br>
+              ✓ Find your "WHY"
+            </p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <p style="margin-top: clamp(20px, 4vw, 40px); font-size: clamp(1.2em, 2.5vw, 1.5em); text-align: center;" class="accent pulse">
+            "Anyone can achieve anything if they want"
+          </p>
+        </div>
+        <aside class="notes">
+          Students, take this home: Your geography is not your destiny. Self-doubt lies. Passion leads. Find your motivation - your "why". Remember Dr. Srinivas's lesson: Anyone can achieve anything if they want.
+        </aside>
+      </section>
+
+      <section data-background-image="images/dream.jpg" data-background-opacity="0.5"
+               data-background-image-fallback="https://images.unsplash.com/photo-1469474968028-56623f02e42e?q=80&w=2074&auto=format&fit=crop">
+        <h1 class="big-statement fade-in">DREAM BIG.</h1>
+        <div class="timeline-item" style="margin-top: clamp(20px, 4vw, 40px);">
+          <p style="font-size: clamp(1.1em, 2.2vw, 1.4em); font-weight: bold;">You are sitting where I sat 23 years ago.</p>
+        </div>
+        <div class="timeline-item">
+          <p style="margin-top: clamp(15px, 2vw, 20px); font-size: clamp(1em, 2vw, 1.3em);">The same teacher. The same academy. The same belief.</p>
+        </div>
+        <div class="timeline-item">
+          <p class="accent pulse" style="margin-top: clamp(25px, 5vw, 50px); font-size: clamp(1.3em, 2.8vw, 1.8em); font-weight: bold;">Your story is just beginning.</p>
+        </div>
+        <div class="question-box" style="margin-top: clamp(30px, 6vw, 60px); background: rgba(230, 43, 30, 0.3);">
+          <p style="text-align: center; font-size: clamp(1.1em, 2.2vw, 1.4em); font-weight: bold;">
+            What's YOUR impossible dream?
+          </p>
+        </div>
+        <aside class="notes">
+          Find your "Why". Work hard. Never give up. And remember Dr. Srinivas's lesson. You can achieve anything. Thank you, and happy 25th anniversary to Dhanush Academy!
+        </aside>
+      </section>
+
+      <section data-background-color="#000">
+        <h1 style="font-size: clamp(2.5em, 6vw, 4em); margin-bottom: clamp(15px, 3vw, 30px);">Happy 25th Anniversary</h1>
+        <h2 class="accent" style="font-size: clamp(2em, 5vw, 3em);">Dhanush Academy</h2>
+        <p style="margin-top: clamp(30px, 6vw, 60px); font-size: clamp(1em, 2vw, 1.2em); opacity: 0.7;">Thank You</p>
+      </section>
+
+    </div>
+  </div>
+
+  <!-- Fullscreen hint (disappears after 5 seconds) -->
+  <div class="fullscreen-hint" id="fullscreen-hint">
+    Press <strong>F</strong> for fullscreen | <strong>→</strong> or <strong>Space</strong> to navigate
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/reveal.min.js"></script>
+  <script>
+    Reveal.initialize({
+      controls: true,
+      progress: true,
+      center: true,
+      hash: true,
+      transition: 'convex',
+      transitionSpeed: 'slow',
+      // Enable fullscreen
+      embedded: false,
+      // Better for presentations
+      touch: true,
+      keyboard: true,
+      // Auto-advance (optional - can be disabled)
+      autoSlide: 0,
+    });
+
+    // Fullscreen instructions
+    document.addEventListener('keydown', function(e) {
+      // F key for fullscreen
+      if (e.key === 'f' || e.key === 'F') {
+        if (!document.fullscreenElement) {
+          document.documentElement.requestFullscreen().catch(err => {
+            console.log('Fullscreen not supported');
+          });
+        } else {
+          document.exitFullscreen();
+        }
+      }
+    });
+
+    // Hide fullscreen hint after 8 seconds
+    setTimeout(function() {
+      const hint = document.getElementById('fullscreen-hint');
+      if (hint) {
+        hint.style.transition = 'opacity 1s';
+        hint.style.opacity = '0';
+        setTimeout(() => hint.style.display = 'none', 1000);
+      }
+    }, 8000);
+
+    // Handle custom images with fallback
+    function loadCustomImages() {
+      const sections = document.querySelectorAll('section[data-background-image]');
+      sections.forEach(section => {
+        const customImage = section.getAttribute('data-background-image');
+        const fallbackImage = section.getAttribute('data-background-image-fallback');
+        
+        if (customImage && customImage.startsWith('images/')) {
+          // Try to load custom image
+          const img = new Image();
+          img.onload = function() {
+            // Custom image exists, use it
+            section.setAttribute('data-background-image', customImage);
+          };
+          img.onerror = function() {
+            // Custom image doesn't exist, use fallback
+            if (fallbackImage) {
+              section.setAttribute('data-background-image', fallbackImage);
+            }
+          };
+          img.src = customImage;
+        }
+      });
+    }
+
+    // Load custom images after Reveal is initialized
+    Reveal.addEventListener('ready', loadCustomImages);
+    loadCustomImages(); // Also try immediately
+  </script>
+</body>
+</html>

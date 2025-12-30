@@ -1,0 +1,49 @@
+═══════════════════════════════════════════════════════════════
+  CUSTOM IMAGES GUIDE - Which Image Goes Where
+═══════════════════════════════════════════════════════════════
+
+📸 SLIDE 2: "I Was You"
+   Image name: students.jpg
+   Suggested: Photo of students/classroom at Dhanush Academy
+   Size: 1920x1080 or similar
+
+📸 SLIDE 3: "1995"
+   Image name: village.jpg
+   Suggested: Photo of your village/rural area
+   Size: 1920x1080 or similar
+
+📸 SLIDE 5: "Dr. Srinivas"
+   Image name: teacher.jpg
+   Suggested: Photo of Dr. Srinivas or teaching scene
+   Size: 1920x1080 or similar
+
+📸 SLIDE 7: "My Cousin Sister"
+   Image name: family.jpg
+   Suggested: Family photo (if appropriate) or related image
+   Size: 1920x1080 or similar
+
+📸 SLIDE 8: "GERMANY"
+   Image name: germany.jpg
+   Suggested: Your lab/workplace in Germany
+   Size: 1920x1080 or similar
+
+📸 SLIDE 9: "One Child"
+   Image name: research.jpg
+   Suggested: Research lab, medical/science equipment
+   Size: 1920x1080 or similar
+
+📸 SLIDE 11: "DREAM BIG"
+   Image name: dream.jpg
+   Suggested: Inspiring sky, horizon, or motivational image
+   Size: 1920x1080 or similar
+
+═══════════════════════════════════════════════════════════════
+  QUICK STEPS:
+═══════════════════════════════════════════════════════════════
+
+1. Copy your photos to this folder (images/)
+2. Rename them to match the names above
+3. Open presentation.html - your images will be used automatically!
+
+═══════════════════════════════════════════════════════════════
+
