@@ -1,5 +1,9 @@
 # Dhanush Academy 25th Anniversary Presentation
 
+## 🌐 Live Presentation
+
+**View the presentation online:** [https://narasimhat.github.io/Dhanush/](https://narasimhat.github.io/Dhanush/)
+
 ## Overview
 This presentation tells the inspiring story of a journey from a rural village to becoming a scientist in Germany, working on rare disease therapeutics. It was created for the 25th anniversary celebration of Dhanush Academy.
 
@@ -7,15 +11,21 @@ This presentation tells the inspiring story of a journey from a rural village to
 
 ## How to Use
 
-### Option 1: Open in Browser (Recommended)
-1. Simply double-click `presentation.html` or open it in any modern web browser
+### Option 1: View Online (Easiest)
+1. Visit: **https://narasimhat.github.io/Dhanush/**
+2. The presentation loads automatically
+3. Press `ESC` to see the slide overview
+4. Use arrow keys or click the navigation controls to move between slides
+
+### Option 2: Open Locally
+1. Simply double-click `index.html` or open it in any modern web browser
 2. The presentation requires an internet connection (for Reveal.js CDN and images)
 3. Press `ESC` to see the slide overview
 4. Use arrow keys or click the navigation controls to move between slides
 
-### Option 2: Present Full Screen
-1. Open `presentation.html` in your browser
-2. Press `F11` (Windows/Linux) or `Cmd+Ctrl+F` (Mac) for full-screen mode
+### Option 3: Present Full Screen
+1. Open the presentation (online or locally)
+2. Press `F` key or `F11` (Windows/Linux) or `Cmd+Ctrl+F` (Mac) for full-screen mode
 3. Navigate using:
    - **Arrow Keys**: Left/Right to move between slides
    - **Space Bar**: Next slide
@@ -54,12 +64,14 @@ This presentation tells the inspiring story of a journey from a rural village to
 
 ## Customization
 
-You can edit `presentation.html` to:
+You can edit `index.html` to:
 - Modify text content in each `<section>`
-- Change background images (update `data-background-image` URLs)
+- Change background images (update `data-background-image` URLs or add your own to `images/` folder)
 - Adjust colors (modify CSS variables in the `:root` section)
 - Add or remove slides
 - Change fonts and styling
+
+See `images/README.md` for instructions on using your own photos.
 
 ## Technical Details
 
@@ -77,6 +89,22 @@ You can edit `presentation.html` to:
 4. **Backup Plan**: Consider downloading Reveal.js locally if internet is unreliable
 5. **Test Equipment**: Test on the presentation computer beforehand if possible
 6. **Speaker Notes**: Press 'S' during presentation to view your notes
+
+## 🚀 GitHub Pages Setup
+
+The presentation is already configured for GitHub Pages! To enable it:
+
+1. Go to your repository: https://github.com/Narasimhat/Dhanush
+2. Click on **Settings** (top menu)
+3. Scroll down to **Pages** (left sidebar)
+4. Under **Source**, select:
+   - Branch: `main`
+   - Folder: `/ (root)`
+5. Click **Save**
+6. Wait 1-2 minutes for GitHub to build your site
+7. Your presentation will be live at: **https://narasimhat.github.io/Dhanush/**
+
+The presentation is already set up with `index.html` as the main file, so it will load automatically!
 
 ## Offline Version (Optional)
 
