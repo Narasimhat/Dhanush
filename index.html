@@ -35,29 +35,50 @@
       line-height: 1.6;
     }
 
-    /* Ensure sections fit on screen */
+    /* Ensure sections fit on screen - Compact */
     .reveal .slides section {
-      padding: 40px 60px;
+      padding: 20px 30px;
       box-sizing: border-box;
       overflow: hidden;
     }
 
-    /* Responsive headings */
+    /* Reduce all margins in slide-content */
+    .slide-content h1,
+    .slide-content h2,
+    .slide-content h3,
+    .slide-content p {
+      margin-top: 0 !important;
+      margin-bottom: 8px !important;
+    }
+
+    .slide-content h1 {
+      margin-bottom: 10px !important;
+    }
+
+    .slide-content h2 {
+      margin-bottom: 8px !important;
+    }
+
+    .slide-content h3 {
+      margin-bottom: 6px !important;
+    }
+
+    /* Responsive headings - Smaller */
     .reveal h1 {
-      font-size: clamp(2em, 5vw, 3em) !important;
+      font-size: clamp(1.5em, 3.5vw, 2.2em) !important;
     }
 
     .reveal h2 {
-      font-size: clamp(1.5em, 4vw, 2.5em) !important;
+      font-size: clamp(1.2em, 3vw, 1.8em) !important;
     }
 
     .reveal h3 {
-      font-size: clamp(1.2em, 3vw, 2em) !important;
+      font-size: clamp(1em, 2.2vw, 1.4em) !important;
     }
 
-    /* The "Big Statement" Text - Responsive */
+    /* The "Big Statement" Text - Smaller */
     .big-statement {
-      font-size: clamp(2em, 5vw, 3.5em) !important;
+      font-size: clamp(1.8em, 4vw, 2.5em) !important;
       line-height: 1.2 !important;
       text-shadow: 2px 2px 20px rgba(0,0,0,0.9);
       word-wrap: break-word;
@@ -75,9 +96,9 @@
       border-left: 5px solid var(--ted-red);
     }
 
-    /* Minimal clean numbers - Responsive */
+    /* Minimal clean numbers - Smaller */
     .stat-number {
-      font-size: clamp(3em, 8vw, 6em) !important;
+      font-size: clamp(2.5em, 6vw, 4em) !important;
       color: var(--ted-red);
       font-weight: 700;
       font-family: 'Oswald', sans-serif;
@@ -85,9 +106,9 @@
     }
 
     .stat-label {
-      font-size: clamp(1em, 2vw, 1.5em);
+      font-size: clamp(0.9em, 1.8vw, 1.2em);
       text-transform: uppercase;
-      letter-spacing: 4px;
+      letter-spacing: 3px;
       opacity: 0.8;
     }
 
@@ -182,22 +203,22 @@
       opacity: 0.7;
     }
 
-    /* Image placeholder area */
+    /* Image placeholder area - Smaller */
     .image-placeholder {
       width: 100%;
-      max-width: 800px;
-      height: 350px;
-      margin: 20px auto 0;
+      max-width: 600px;
+      height: 250px;
+      margin: 15px auto 0;
       background: rgba(255,255,255,0.1);
-      border: 3px dashed rgba(230, 43, 30, 0.5);
-      border-radius: 10px;
+      border: 2px dashed rgba(230, 43, 30, 0.5);
+      border-radius: 8px;
       display: flex;
       align-items: center;
       justify-content: center;
       color: rgba(255,255,255,0.5);
-      font-size: 1.2em;
+      font-size: 0.9em;
       text-align: center;
-      padding: 20px;
+      padding: 15px;
       box-sizing: border-box;
     }
 
@@ -208,16 +229,16 @@
       border-radius: 5px;
     }
 
-    /* Slide content container */
+    /* Slide content container - Compact */
     .slide-content {
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: flex-start;
+      justify-content: center;
       min-height: 100%;
-      padding: 40px 20px;
+      padding: 20px;
       box-sizing: border-box;
-      overflow-y: auto;
+      overflow: hidden;
     }
 
     /* Two column layout for image + text */
@@ -245,10 +266,10 @@
 
       <section data-background-color="#000">
         <div class="slide-content">
-          <h1 style="font-size: clamp(2em, 5vw, 2.5em); margin-bottom: 20px;">From Village Dust<br>to <span class="accent">Global Skies</span></h1>
-          <h2 style="font-size: clamp(1.2em, 3vw, 1.8em); color: #888; margin-bottom: 15px; font-weight: 300; letter-spacing: 3px;">25 Years of Dhanush Academy</h2>
-          <h3 style="font-size: clamp(1em, 2vw, 1.3em); color: #666; margin-bottom: 10px; font-weight: 300;">A Journey of Perseverance, Passion, and Purpose</h3>
-          <p style="margin-bottom: 30px; font-size: clamp(0.8em, 1.6vw, 0.9em); opacity: 0.7;">25th Anniversary Celebration</p>
+          <h1 style="font-size: clamp(1.5em, 3.5vw, 2em);">From Village Dust<br>to <span class="accent">Global Skies</span></h1>
+          <h2 style="font-size: clamp(1em, 2.5vw, 1.4em); color: #888; font-weight: 300; letter-spacing: 2px;">25 Years of Dhanush Academy</h2>
+          <h3 style="font-size: clamp(0.9em, 2vw, 1.1em); color: #666; font-weight: 300;">A Journey of Perseverance, Passion, and Purpose</h3>
+          <p style="font-size: clamp(0.75em, 1.5vw, 0.85em); opacity: 0.7;">25th Anniversary Celebration</p>
           <div class="image-placeholder">
             <img src="images/slide1.png" alt="Slide 1 Image" onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=\'color: rgba(255,255,255,0.3);\'>Image Placeholder<br><small>Add image: images/slide1.png</small></div>';">
           </div>
@@ -270,8 +291,8 @@
 
       <section data-background-color="#000">
         <div class="slide-content">
-          <h1 style="font-size: clamp(3em, 8vw, 5em); margin-bottom: 20px;">1995</h1>
-          <h2 style="font-size: clamp(1.2em, 3vw, 1.6em); margin-bottom: 30px; font-weight: 300;">A 10-year-old boy. A flying airplane. An impossible dream.</h2>
+          <h1 style="font-size: clamp(2em, 5vw, 3em);">1995</h1>
+          <h2 style="font-size: clamp(1em, 2.5vw, 1.3em); font-weight: 300;">A 10-year-old boy. A flying airplane. An impossible dream.</h2>
           <div class="image-placeholder">
             <img src="images/village.jpg" alt="Village 1995" onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=\'color: rgba(255,255,255,0.3);\'>Image Placeholder<br><small>Add image: images/village.jpg</small></div>';">
           </div>
@@ -284,13 +305,13 @@
       <section data-background-color="#111">
         <div class="slide-content">
           <h1 class="big-statement" style="color: #555; margin-bottom: 20px;">"It's Impossible."</h1>
-          <h2 style="font-size: clamp(1.1em, 2.5vw, 1.4em); margin-bottom: 20px; font-weight: 300; line-height: 1.8;">
+          <h2 style="font-size: clamp(0.95em, 2vw, 1.2em); font-weight: 300; line-height: 1.6;">
             ✗ Self-doubt<br>
             ✗ No encouragement<br>
             ✗ No one from the village had studied abroad<br>
             ✗ The ceiling felt too low
           </h2>
-          <h3 style="font-size: clamp(1em, 2vw, 1.2em); margin-bottom: 30px; font-weight: 300;">Have you ever felt this way?</h3>
+          <h3 style="font-size: clamp(0.9em, 1.8vw, 1.1em); font-weight: 300;">Have you ever felt this way?</h3>
           <div class="image-placeholder">
             <img src="images/impossible.jpg" alt="Impossible" onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=\'color: rgba(255,255,255,0.3);\'>Image Placeholder<br><small>Add image: images/impossible.jpg</small></div>';">
           </div>
@@ -302,9 +323,9 @@
 
       <section data-background-color="#000">
         <div class="slide-content">
-          <h2 style="font-size: clamp(1.2em, 3vw, 1.6em); margin-bottom: 15px; font-weight: 300;">23 Years Ago</h2>
-          <h1 class="big-statement" style="margin-bottom: 20px;">Dr. Srinivas<br>Ignited the <span class="accent">Fire</span></h1>
-          <h3 style="margin-bottom: 30px; font-size: clamp(1em, 2vw, 1.2em); font-weight: 300;">"Anyone can achieve anything if they want"</h3>
+          <h2 style="font-size: clamp(1em, 2.5vw, 1.3em); font-weight: 300;">23 Years Ago</h2>
+          <h1 class="big-statement">Dr. Srinivas<br>Ignited the <span class="accent">Fire</span></h1>
+          <h3 style="font-size: clamp(0.9em, 1.8vw, 1.1em); font-weight: 300;">"Anyone can achieve anything if they want"</h3>
           <div class="image-placeholder">
             <img src="images/teacher.jpg" alt="Dr. Srinivas" onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=\'color: rgba(255,255,255,0.3);\'>Image Placeholder<br><small>Add image: images/teacher.jpg</small></div>';">
           </div>
@@ -316,7 +337,7 @@
 
       <section data-background-color="#E62B1E">
         <div class="slide-content">
-          <div style="display: flex; justify-content: center; gap: clamp(50px, 10vw, 100px); align-items: center; flex-wrap: wrap; margin-bottom: 20px;">
+          <div style="display: flex; justify-content: center; gap: clamp(30px, 8vw, 60px); align-items: center; flex-wrap: wrap;">
             <div>
               <div class="stat-number" style="color: white;">9</div>
               <div class="stat-label" style="color: white;">Years</div>
@@ -326,7 +347,7 @@
               <div class="stat-label" style="color: white;">Attempts</div>
             </div>
           </div>
-          <h2 style="margin-bottom: 30px; color: white; font-size: clamp(1em, 2vw, 1.2em); font-weight: 300;">Before the PhD.</h2>
+          <h2 style="color: white; font-size: clamp(0.9em, 1.8vw, 1.1em); font-weight: 300;">Before the PhD.</h2>
           <div class="image-placeholder" style="background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.3);">
             <img src="images/struggle.jpg" alt="Struggle" onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=\'color: rgba(255,255,255,0.5);\'>Image Placeholder<br><small>Add image: images/struggle.jpg</small></div>';">
           </div>
@@ -338,9 +359,9 @@
 
       <section data-background-color="#000">
         <div class="slide-content">
-          <h1 style="font-size: clamp(1.8em, 4vw, 2.5em); margin-bottom: 15px;">Driven by <span class="accent">My Cousin Sister</span></h1>
-          <h2 style="font-size: clamp(1.2em, 3vw, 1.8em); margin-bottom: 15px; font-weight: 300; opacity: 0.8;">Affected by Unknown Disease</h2>
-          <h3 style="margin-bottom: 30px; font-size: clamp(1em, 2vw, 1.2em); font-weight: 300;">She became my inspiration to develop therapies for rare diseases</h3>
+          <h1 style="font-size: clamp(1.4em, 3.5vw, 2em);">Driven by <span class="accent">My Cousin Sister</span></h1>
+          <h2 style="font-size: clamp(1em, 2.5vw, 1.4em); font-weight: 300; opacity: 0.8;">Affected by Unknown Disease</h2>
+          <h3 style="font-size: clamp(0.9em, 1.8vw, 1.1em); font-weight: 300;">She became my inspiration to develop therapies for rare diseases</h3>
           <div class="image-placeholder">
             <img src="images/family.jpg" alt="Family" onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=\'color: rgba(255,255,255,0.3);\'>Image Placeholder<br><small>Add image: images/family.jpg</small></div>';">
           </div>
@@ -352,10 +373,10 @@
 
       <section data-background-color="#000">
         <div class="slide-content">
-          <h2 style="font-size: clamp(1.2em, 3vw, 1.6em); margin-bottom: 15px; font-weight: 300;">Today</h2>
-          <h1 class="big-statement" style="margin-bottom: 15px;">GERMANY.</h1>
-          <h3 style="font-size: clamp(1em, 2vw, 1.2em); margin-bottom: 10px; font-weight: 300;">Scientist. PhD. Developing therapeutics for rare diseases.</h3>
-          <p style="margin-bottom: 30px; opacity: 0.8; font-size: clamp(1em, 2vw, 1.2em);">Solid foundation. Living the dream.</p>
+          <h2 style="font-size: clamp(1em, 2.5vw, 1.3em); font-weight: 300;">Today</h2>
+          <h1 class="big-statement">GERMANY.</h1>
+          <h3 style="font-size: clamp(0.9em, 1.8vw, 1.1em); font-weight: 300;">Scientist. PhD. Developing therapeutics for rare diseases.</h3>
+          <p style="opacity: 0.8; font-size: clamp(0.85em, 1.6vw, 1em);">Solid foundation. Living the dream.</p>
           <div class="image-placeholder">
             <img src="images/germany.jpg" alt="Germany" onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=\'color: rgba(255,255,255,0.3);\'>Image Placeholder<br><small>Add image: images/germany.jpg</small></div>';">
           </div>
@@ -367,9 +388,9 @@
 
       <section data-background-color="#000">
         <div class="slide-content">
-          <h1 class="big-statement" style="margin-bottom: 15px;">One Child.</h1>
-          <h2 style="font-size: clamp(1.2em, 3vw, 1.6em); margin-bottom: 15px; font-weight: 300;">2 years old. Rare disease. Fighting for life.</h2>
-          <h3 class="accent" style="font-weight: bold; margin-bottom: 30px; font-size: clamp(1.2em, 2.5vw, 1.5em);">In the next 5 years,<br>I hope to be part of saving them.</h3>
+          <h1 class="big-statement">One Child.</h1>
+          <h2 style="font-size: clamp(1em, 2.5vw, 1.3em); font-weight: 300;">2 years old. Rare disease. Fighting for life.</h2>
+          <h3 class="accent" style="font-weight: bold; font-size: clamp(1em, 2.2vw, 1.3em);">In the next 5 years,<br>I hope to be part of saving them.</h3>
           <div class="image-placeholder">
             <img src="images/research.jpg" alt="Research" onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=\'color: rgba(255,255,255,0.3);\'>Image Placeholder<br><small>Add image: images/research.jpg</small></div>';">
           </div>
@@ -381,16 +402,16 @@
 
       <section data-background-color="#000">
         <div class="slide-content">
-          <h1 style="font-size: clamp(2em, 5vw, 3em); line-height: 1.2; margin-bottom: 20px;">
+          <h1 style="font-size: clamp(1.5em, 4vw, 2.2em); line-height: 1.2;">
             YOUR GEOGRAPHY<br>IS NOT YOUR<br><span class="accent">DESTINY.</span>
           </h1>
-          <h2 style="font-size: clamp(1em, 2vw, 1.3em); line-height: 2; margin-bottom: 20px; font-weight: 300;">
+          <h2 style="font-size: clamp(0.9em, 1.8vw, 1.1em); line-height: 1.6;">
             ✓ Self-doubt lies<br>
             ✓ Passion leads<br>
             ✓ Failure is part of the journey<br>
             ✓ Find your "WHY"
           </h2>
-          <h3 style="margin-bottom: 30px; font-size: clamp(1.2em, 2.5vw, 1.5em); text-align: center;" class="accent pulse">
+          <h3 style="font-size: clamp(1em, 2.2vw, 1.3em); text-align: center;" class="accent pulse">
             "Anyone can achieve anything if they want"
           </h3>
           <div class="image-placeholder">
@@ -406,10 +427,10 @@
       <section data-background-color="#000">
         <div class="slide-content">
           <h1 class="big-statement fade-in" style="margin-bottom: 15px;">DREAM BIG.</h1>
-          <h2 style="font-size: clamp(1.1em, 2.5vw, 1.4em); margin-bottom: 10px; font-weight: bold;">You are sitting where I sat 23 years ago.</h2>
-          <h3 style="margin-bottom: 10px; font-size: clamp(1em, 2vw, 1.3em); font-weight: 300;">The same teacher. The same academy. The same belief.</h3>
-          <h2 class="accent pulse" style="margin-bottom: 15px; font-size: clamp(1.3em, 2.8vw, 1.8em); font-weight: bold;">Your story is just beginning.</h2>
-          <h3 style="margin-bottom: 30px; font-size: clamp(1.1em, 2.2vw, 1.4em); font-weight: bold; color: var(--ted-red);">
+          <h2 style="font-size: clamp(1em, 2.2vw, 1.2em); font-weight: bold;">You are sitting where I sat 23 years ago.</h2>
+          <h3 style="font-size: clamp(0.9em, 1.8vw, 1.1em); font-weight: 300;">The same teacher. The same academy. The same belief.</h3>
+          <h2 class="accent pulse" style="font-size: clamp(1.1em, 2.5vw, 1.4em); font-weight: bold;">Your story is just beginning.</h2>
+          <h3 style="font-size: clamp(1em, 2vw, 1.2em); font-weight: bold; color: var(--ted-red);">
             What's YOUR impossible dream?
           </h3>
           <div class="image-placeholder">
@@ -423,9 +444,9 @@
 
       <section data-background-color="#000">
         <div class="slide-content">
-          <h1 style="font-size: clamp(2.5em, 6vw, 4em); margin-bottom: clamp(15px, 3vw, 30px);">Happy 25th Anniversary</h1>
-          <h2 class="accent" style="font-size: clamp(2em, 5vw, 3em); margin-bottom: 20px;">Dhanush Academy</h2>
-          <h3 style="margin-bottom: 30px; font-size: clamp(1em, 2vw, 1.2em); opacity: 0.7; font-weight: 300;">Thank You</h3>
+          <h1 style="font-size: clamp(1.8em, 4.5vw, 2.8em);">Happy 25th Anniversary</h1>
+          <h2 class="accent" style="font-size: clamp(1.5em, 3.5vw, 2.2em);">Dhanush Academy</h2>
+          <h3 style="font-size: clamp(0.9em, 1.8vw, 1.1em); opacity: 0.7; font-weight: 300;">Thank You</h3>
           <div class="image-placeholder">
             <img src="images/anniversary.jpg" alt="Anniversary" onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=\'color: rgba(255,255,255,0.3);\'>Image Placeholder<br><small>Add image: images/anniversary.jpg</small></div>';">
           </div>
