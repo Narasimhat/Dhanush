@@ -181,6 +181,58 @@
       z-index: 1000;
       opacity: 0.7;
     }
+
+    /* Image placeholder area */
+    .image-placeholder {
+      width: 100%;
+      max-width: 800px;
+      height: 400px;
+      margin: 30px auto;
+      background: rgba(255,255,255,0.1);
+      border: 3px dashed rgba(230, 43, 30, 0.5);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: rgba(255,255,255,0.5);
+      font-size: 1.2em;
+      text-align: center;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    .image-placeholder img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      border-radius: 5px;
+    }
+
+    /* Slide content container */
+    .slide-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100%;
+    }
+
+    /* Two column layout for image + text */
+    .slide-two-column {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    @media (max-width: 768px) {
+      .slide-two-column {
+        grid-template-columns: 1fr;
+      }
+    }
   </style>
 </head>
 
@@ -189,150 +241,177 @@
     <div class="slides">
 
       <section data-background-color="#000">
-        <h3 style="letter-spacing: 5px; color: #888;">25 Years of Dhanush Academy</h3>
-        <h1 style="font-size: clamp(2em, 5vw, 2.5em);">From Village Dust<br>to <span class="accent">Global Skies</span></h1>
-        <p style="margin-top: clamp(25px, 5vw, 50px); font-size: clamp(0.9em, 1.8vw, 1em); opacity: 0.6;">A Journey of Perseverance, Passion, and Purpose</p>
-        <p style="margin-top: clamp(10px, 2vw, 20px); font-size: clamp(0.8em, 1.6vw, 0.9em); opacity: 0.5;">25th Anniversary Celebration</p>
+        <div class="slide-content">
+          <div class="image-placeholder">
+            <img src="images/slide1.png" alt="Slide 1 Image" onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=\'color: rgba(255,255,255,0.3);\'>Image Placeholder<br><small>Add image: images/slide1.png</small></div>';">
+          </div>
+          <h1 style="font-size: clamp(2em, 5vw, 2.5em); margin-top: 30px;">From Village Dust<br>to <span class="accent">Global Skies</span></h1>
+          <h2 style="font-size: clamp(1.2em, 3vw, 1.8em); color: #888; margin-top: 20px; font-weight: 300; letter-spacing: 3px;">25 Years of Dhanush Academy</h2>
+          <h3 style="font-size: clamp(1em, 2vw, 1.3em); color: #666; margin-top: 15px; font-weight: 300;">A Journey of Perseverance, Passion, and Purpose</h3>
+          <p style="margin-top: clamp(10px, 2vw, 20px); font-size: clamp(0.8em, 1.6vw, 0.9em); opacity: 0.7;">25th Anniversary Celebration</p>
+        </div>
       </section>
 
-      <section data-background-image="images/students.jpg" data-background-opacity="0.4" 
-               data-background-image-fallback="https://images.unsplash.com/photo-1529070538774-1843cb3265df?q=80&w=2070&auto=format&fit=crop">
-        <div class="backdrop-overlay fade-in">
-          <h2 class="big-statement">I Was <span class="accent">You</span>.</h2>
-        </div>
-        <div class="question-box" style="margin-top: clamp(20px, 5vw, 50px); background: rgba(0,0,0,0.6);">
-          <p style="text-align: center; font-size: clamp(1.1em, 2.2vw, 1.4em);">Look around. 23 years ago, I sat exactly where you're sitting now.</p>
+      <section data-background-color="#000">
+        <div class="slide-content">
+          <div class="image-placeholder">
+            <img src="images/students.jpg" alt="Students" onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=\'color: rgba(255,255,255,0.3);\'>Image Placeholder<br><small>Add image: images/students.jpg</small></div>';">
+          </div>
+          <h1 class="big-statement">I Was <span class="accent">You</span>.</h1>
+          <h2 style="font-size: clamp(1.2em, 3vw, 1.6em); margin-top: 30px; font-weight: 300;">Look around. 23 years ago, I sat exactly where you're sitting now.</h2>
         </div>
         <aside class="notes">
           Look around. When I see you, I don't just see students. I see myself. 23 years ago, I sat in your chair at Dhanush Academy, just like you are today.
         </aside>
       </section>
 
-      <section data-background-image="images/village.jpg" data-background-opacity="0.6"
-               data-background-image-fallback="https://images.unsplash.com/photo-1474302770737-173ee21bab63?q=80&w=2070&auto=format&fit=crop">
-        <h1 style="font-size: clamp(3em, 8vw, 5em);">1995</h1>
-        <p style="font-size: clamp(1em, 2vw, 1.2em);">A 10-year-old boy. A flying airplane. An impossible dream.</p>
+      <section data-background-color="#000">
+        <div class="slide-content">
+          <div class="image-placeholder">
+            <img src="images/village.jpg" alt="Village 1995" onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=\'color: rgba(255,255,255,0.3);\'>Image Placeholder<br><small>Add image: images/village.jpg</small></div>';">
+          </div>
+          <h1 style="font-size: clamp(3em, 8vw, 5em); margin-top: 30px;">1995</h1>
+          <h2 style="font-size: clamp(1.2em, 3vw, 1.6em); margin-top: 20px; font-weight: 300;">A 10-year-old boy. A flying airplane. An impossible dream.</h2>
+        </div>
         <aside class="notes">
           Picture a very rural village in 1995. A 10-year-old small kid staring at a flying aeroplane in the sky, dreaming about travelling. But reality hit hard - it seemed impossible in his situation.
         </aside>
       </section>
 
       <section data-background-color="#111">
-        <h2 class="big-statement" style="color: #555;">"It's Impossible."</h2>
-        <div class="highlight-box" style="margin-top: clamp(20px, 5vw, 50px); background: rgba(255,255,255,0.1);">
-          <p style="font-size: clamp(1em, 2vw, 1.3em); line-height: 1.8;">
+        <div class="slide-content">
+          <div class="image-placeholder">
+            <img src="images/impossible.jpg" alt="Impossible" onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=\'color: rgba(255,255,255,0.3);\'>Image Placeholder<br><small>Add image: images/impossible.jpg</small></div>';">
+          </div>
+          <h1 class="big-statement" style="color: #555; margin-top: 30px;">"It's Impossible."</h1>
+          <h2 style="font-size: clamp(1.1em, 2.5vw, 1.4em); margin-top: 30px; font-weight: 300; line-height: 1.8;">
             ✗ Self-doubt<br>
             ✗ No encouragement<br>
             ✗ No one from the village had studied abroad<br>
             ✗ The ceiling felt too low
-          </p>
-        </div>
-        <div class="question-box" style="margin-top: clamp(20px, 4vw, 40px);">
-          <p style="text-align: center; font-size: clamp(1em, 2vw, 1.2em);">Have you ever felt this way?</p>
+          </h2>
+          <h3 style="font-size: clamp(1em, 2vw, 1.2em); margin-top: 30px; font-weight: 300;">Have you ever felt this way?</h3>
         </div>
         <aside class="notes">
           Reality hit hard. Self-doubt crept in. There was a lack of encouragement - no one from that village or around had ever studied abroad. The dream seemed unreachable.
         </aside>
       </section>
 
-      <section data-background-image="images/teacher.jpg" data-background-opacity="0.5"
-               data-background-image-fallback="https://images.unsplash.com/photo-1495615080073-6b89c9839ce0?q=80&w=2000&auto=format&fit=crop">
-        <h3>23 Years Ago</h3>
-        <h1 class="big-statement" style="margin-top: clamp(20px, 4vw, 40px);">Dr. Srinivas<br>Ignited the <span class="accent">Fire</span></h1>
-        <p style="margin-top: clamp(15px, 3vw, 30px); font-size: clamp(1em, 2vw, 1.2em);">"Anyone can achieve anything if they want"</p>
+      <section data-background-color="#000">
+        <div class="slide-content">
+          <div class="image-placeholder">
+            <img src="images/teacher.jpg" alt="Dr. Srinivas" onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=\'color: rgba(255,255,255,0.3);\'>Image Placeholder<br><small>Add image: images/teacher.jpg</small></div>';">
+          </div>
+          <h2 style="font-size: clamp(1.2em, 3vw, 1.6em); margin-top: 30px; font-weight: 300;">23 Years Ago</h2>
+          <h1 class="big-statement" style="margin-top: clamp(20px, 4vw, 40px);">Dr. Srinivas<br>Ignited the <span class="accent">Fire</span></h1>
+          <h3 style="margin-top: clamp(15px, 3vw, 30px); font-size: clamp(1em, 2vw, 1.2em); font-weight: 300;">"Anyone can achieve anything if they want"</h3>
+        </div>
         <aside class="notes">
           Then came Dr. Srinivas, the founder of Dhanush Academy. He didn't just teach - he ignited a fire. He showed that anyone can achieve anything if they want. He turned "Impossible" into "What If?"
         </aside>
       </section>
 
       <section data-background-color="#E62B1E">
-        <div style="display: flex; justify-content: center; gap: clamp(50px, 10vw, 100px); align-items: center; flex-wrap: wrap;">
-          <div>
-            <div class="stat-number" style="color: white;">9</div>
-            <div class="stat-label" style="color: white;">Years</div>
+        <div class="slide-content">
+          <div class="image-placeholder" style="background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.3);">
+            <img src="images/struggle.jpg" alt="Struggle" onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=\'color: rgba(255,255,255,0.5);\'>Image Placeholder<br><small>Add image: images/struggle.jpg</small></div>';">
           </div>
-          <div>
-            <div class="stat-number" style="color: white;">4</div>
-            <div class="stat-label" style="color: white;">Attempts</div>
+          <div style="display: flex; justify-content: center; gap: clamp(50px, 10vw, 100px); align-items: center; flex-wrap: wrap; margin-top: 30px;">
+            <div>
+              <div class="stat-number" style="color: white;">9</div>
+              <div class="stat-label" style="color: white;">Years</div>
+            </div>
+            <div>
+              <div class="stat-number" style="color: white;">4</div>
+              <div class="stat-label" style="color: white;">Attempts</div>
+            </div>
           </div>
+          <h2 style="margin-top: clamp(25px, 5vw, 50px); color: white; font-size: clamp(1em, 2vw, 1.2em); font-weight: 300;">Before the PhD.</h2>
         </div>
-        <p style="margin-top: clamp(25px, 5vw, 50px); color: white; font-size: clamp(1em, 2vw, 1.2em);">Before the PhD.</p>
         <aside class="notes">
           It wasn't easy. 9 years of struggle after my masters. 4 attempts at the PhD. I wanted to quit. But I had a reason to keep going - a strong motivation that sustained my passion.
         </aside>
       </section>
 
-      <section data-background-image="images/family.jpg" data-background-opacity="0.4"
-               data-background-image-fallback="https://images.unsplash.com/photo-1576086213369-97a306d36557?q=80&w=2000&auto=format&fit=crop">
-        <h2 style="text-align: left; margin-left: clamp(20px, 5vw, 50px); font-size: clamp(1.5em, 4vw, 2.5em);">Driven by<br><span class="accent">My Cousin Sister</span></h2>
-        <h2 style="text-align: right; margin-right: clamp(20px, 5vw, 50px); opacity: 0.5; font-size: clamp(1.5em, 4vw, 2.5em);">Affected by<br>Unknown Disease</h2>
-        <p style="margin-top: clamp(30px, 6vw, 60px); text-align: center; font-size: clamp(1em, 2vw, 1.2em);">She became my inspiration to develop therapies for rare diseases</p>
+      <section data-background-color="#000">
+        <div class="slide-content">
+          <div class="image-placeholder">
+            <img src="images/family.jpg" alt="Family" onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=\'color: rgba(255,255,255,0.3);\'>Image Placeholder<br><small>Add image: images/family.jpg</small></div>';">
+          </div>
+          <h1 style="font-size: clamp(1.8em, 4vw, 2.5em); margin-top: 30px;">Driven by <span class="accent">My Cousin Sister</span></h1>
+          <h2 style="font-size: clamp(1.2em, 3vw, 1.8em); margin-top: 20px; font-weight: 300; opacity: 0.8;">Affected by Unknown Disease</h2>
+          <h3 style="margin-top: clamp(20px, 4vw, 30px); font-size: clamp(1em, 2vw, 1.2em); font-weight: 300;">She became my inspiration to develop therapies for rare diseases</h3>
+        </div>
         <aside class="notes">
           My cousin sister's battle with an unknown rare disease gave me my purpose. To sustain passion, you need strong motivation - and she was mine. I didn't just study science; I wanted to weaponize it against suffering.
         </aside>
       </section>
 
-      <section data-background-image="images/germany.jpg" data-background-opacity="0.6"
-               data-background-image-fallback="https://images.unsplash.com/photo-1582719508461-905c673771fd?q=80&w=1925&auto=format&fit=crop">
-        <h3>Today</h3>
-        <h1 class="big-statement">GERMANY.</h1>
-        <p style="font-size: clamp(1em, 2vw, 1.2em);">Scientist. PhD. Developing therapeutics for rare diseases.</p>
-        <p style="margin-top: clamp(15px, 3vw, 30px); opacity: 0.8; font-size: clamp(1em, 2vw, 1.2em);">Solid foundation. Living the dream.</p>
+      <section data-background-color="#000">
+        <div class="slide-content">
+          <div class="image-placeholder">
+            <img src="images/germany.jpg" alt="Germany" onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=\'color: rgba(255,255,255,0.3);\'>Image Placeholder<br><small>Add image: images/germany.jpg</small></div>';">
+          </div>
+          <h2 style="font-size: clamp(1.2em, 3vw, 1.6em); margin-top: 30px; font-weight: 300;">Today</h2>
+          <h1 class="big-statement" style="margin-top: 20px;">GERMANY.</h1>
+          <h3 style="font-size: clamp(1em, 2vw, 1.2em); margin-top: 20px; font-weight: 300;">Scientist. PhD. Developing therapeutics for rare diseases.</h3>
+          <p style="margin-top: clamp(15px, 3vw, 30px); opacity: 0.8; font-size: clamp(1em, 2vw, 1.2em);">Solid foundation. Living the dream.</p>
+        </div>
         <aside class="notes">
           Today, that boy from the rural village is a scientist in Germany. I achieved my PhD at the 4th attempt, after 9 years of struggle. I am living the dream I once thought was impossible. The foundation is now solid.
         </aside>
       </section>
 
-      <section data-background-image="images/research.jpg" data-background-opacity="0.5"
-               data-background-image-fallback="https://images.unsplash.com/photo-1628258334105-2a0b3d6efee1?q=80&w=1974&auto=format&fit=crop">
-        <h2 class="big-statement">One Child.</h2>
-        <p style="font-size: clamp(1em, 2vw, 1.2em);">2 years old. Rare disease. Fighting for life.</p>
-        <p class="accent" style="font-weight: bold; margin-top: clamp(20px, 4vw, 40px); font-size: clamp(1.2em, 2.5vw, 1.5em);">In the next 5 years,<br>I hope to be part of saving them.</p>
+      <section data-background-color="#000">
+        <div class="slide-content">
+          <div class="image-placeholder">
+            <img src="images/research.jpg" alt="Research" onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=\'color: rgba(255,255,255,0.3);\'>Image Placeholder<br><small>Add image: images/research.jpg</small></div>';">
+          </div>
+          <h1 class="big-statement" style="margin-top: 30px;">One Child.</h1>
+          <h2 style="font-size: clamp(1.2em, 3vw, 1.6em); margin-top: 20px; font-weight: 300;">2 years old. Rare disease. Fighting for life.</h2>
+          <h3 class="accent" style="font-weight: bold; margin-top: clamp(20px, 4vw, 40px); font-size: clamp(1.2em, 2.5vw, 1.5em);">In the next 5 years,<br>I hope to be part of saving them.</h3>
+        </div>
         <aside class="notes">
           Right now, I am in the process of developing therapeutics for a 2-year-old child with a rare disease. In the next 5 years, I hope to be part of saving that kid's life. This is not just a job - it's a calling.
         </aside>
       </section>
 
       <section data-background-color="#000">
-        <h2 style="font-size: clamp(2em, 5vw, 3em); line-height: 1.2;">
-          YOUR GEOGRAPHY<br>IS NOT YOUR<br><span class="accent">DESTINY.</span>
-        </h2>
-        <div class="timeline-item" style="margin-top: clamp(25px, 5vw, 50px);">
-          <div class="highlight-box">
-            <p style="font-size: clamp(1em, 2vw, 1.3em); line-height: 2;">
-              ✓ Self-doubt lies<br>
-              ✓ Passion leads<br>
-              ✓ Failure is part of the journey<br>
-              ✓ Find your "WHY"
-            </p>
+        <div class="slide-content">
+          <div class="image-placeholder">
+            <img src="images/geography.jpg" alt="Geography" onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=\'color: rgba(255,255,255,0.3);\'>Image Placeholder<br><small>Add image: images/geography.jpg</small></div>';">
           </div>
-        </div>
-        <div class="timeline-item">
-          <p style="margin-top: clamp(20px, 4vw, 40px); font-size: clamp(1.2em, 2.5vw, 1.5em); text-align: center;" class="accent pulse">
+          <h1 style="font-size: clamp(2em, 5vw, 3em); line-height: 1.2; margin-top: 30px;">
+            YOUR GEOGRAPHY<br>IS NOT YOUR<br><span class="accent">DESTINY.</span>
+          </h1>
+          <h2 style="font-size: clamp(1em, 2vw, 1.3em); line-height: 2; margin-top: clamp(25px, 5vw, 50px); font-weight: 300;">
+            ✓ Self-doubt lies<br>
+            ✓ Passion leads<br>
+            ✓ Failure is part of the journey<br>
+            ✓ Find your "WHY"
+          </h2>
+          <h3 style="margin-top: clamp(20px, 4vw, 40px); font-size: clamp(1.2em, 2.5vw, 1.5em); text-align: center;" class="accent pulse">
             "Anyone can achieve anything if they want"
-          </p>
+          </h3>
         </div>
+      </section>
         <aside class="notes">
           Students, take this home: Your geography is not your destiny. Self-doubt lies. Passion leads. Find your motivation - your "why". Remember Dr. Srinivas's lesson: Anyone can achieve anything if they want.
         </aside>
       </section>
 
-      <section data-background-image="images/dream.jpg" data-background-opacity="0.5"
-               data-background-image-fallback="https://images.unsplash.com/photo-1469474968028-56623f02e42e?q=80&w=2074&auto=format&fit=crop">
-        <h1 class="big-statement fade-in">DREAM BIG.</h1>
-        <div class="timeline-item" style="margin-top: clamp(20px, 4vw, 40px);">
-          <p style="font-size: clamp(1.1em, 2.2vw, 1.4em); font-weight: bold;">You are sitting where I sat 23 years ago.</p>
-        </div>
-        <div class="timeline-item">
-          <p style="margin-top: clamp(15px, 2vw, 20px); font-size: clamp(1em, 2vw, 1.3em);">The same teacher. The same academy. The same belief.</p>
-        </div>
-        <div class="timeline-item">
-          <p class="accent pulse" style="margin-top: clamp(25px, 5vw, 50px); font-size: clamp(1.3em, 2.8vw, 1.8em); font-weight: bold;">Your story is just beginning.</p>
-        </div>
-        <div class="question-box" style="margin-top: clamp(30px, 6vw, 60px); background: rgba(230, 43, 30, 0.3);">
-          <p style="text-align: center; font-size: clamp(1.1em, 2.2vw, 1.4em); font-weight: bold;">
+      <section data-background-color="#000">
+        <div class="slide-content">
+          <div class="image-placeholder">
+            <img src="images/dream.jpg" alt="Dream" onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=\'color: rgba(255,255,255,0.3);\'>Image Placeholder<br><small>Add image: images/dream.jpg</small></div>';">
+          </div>
+          <h1 class="big-statement fade-in" style="margin-top: 30px;">DREAM BIG.</h1>
+          <h2 style="font-size: clamp(1.1em, 2.5vw, 1.4em); margin-top: clamp(20px, 4vw, 40px); font-weight: bold;">You are sitting where I sat 23 years ago.</h2>
+          <h3 style="margin-top: clamp(15px, 2vw, 20px); font-size: clamp(1em, 2vw, 1.3em); font-weight: 300;">The same teacher. The same academy. The same belief.</h3>
+          <h2 class="accent pulse" style="margin-top: clamp(25px, 5vw, 50px); font-size: clamp(1.3em, 2.8vw, 1.8em); font-weight: bold;">Your story is just beginning.</h2>
+          <h3 style="margin-top: clamp(30px, 6vw, 60px); font-size: clamp(1.1em, 2.2vw, 1.4em); font-weight: bold; color: var(--ted-red);">
             What's YOUR impossible dream?
-          </p>
+          </h3>
         </div>
         <aside class="notes">
           Find your "Why". Work hard. Never give up. And remember Dr. Srinivas's lesson. You can achieve anything. Thank you, and happy 25th anniversary to Dhanush Academy!
@@ -340,9 +419,14 @@
       </section>
 
       <section data-background-color="#000">
-        <h1 style="font-size: clamp(2.5em, 6vw, 4em); margin-bottom: clamp(15px, 3vw, 30px);">Happy 25th Anniversary</h1>
-        <h2 class="accent" style="font-size: clamp(2em, 5vw, 3em);">Dhanush Academy</h2>
-        <p style="margin-top: clamp(30px, 6vw, 60px); font-size: clamp(1em, 2vw, 1.2em); opacity: 0.7;">Thank You</p>
+        <div class="slide-content">
+          <div class="image-placeholder">
+            <img src="images/anniversary.jpg" alt="Anniversary" onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=\'color: rgba(255,255,255,0.3);\'>Image Placeholder<br><small>Add image: images/anniversary.jpg</small></div>';">
+          </div>
+          <h1 style="font-size: clamp(2.5em, 6vw, 4em); margin-top: 30px; margin-bottom: clamp(15px, 3vw, 30px);">Happy 25th Anniversary</h1>
+          <h2 class="accent" style="font-size: clamp(2em, 5vw, 3em);">Dhanush Academy</h2>
+          <h3 style="margin-top: clamp(30px, 6vw, 60px); font-size: clamp(1em, 2vw, 1.2em); opacity: 0.7; font-weight: 300;">Thank You</h3>
+        </div>
       </section>
 
     </div>
