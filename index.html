@@ -4,459 +4,308 @@
   <meta charset="utf-8">
   <title>From Village to Sky | Dhanush Academy</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <!-- Reveal.js -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/reveal.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/theme/black.min.css">
-
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Open+Sans:wght@300&display=swap" rel="stylesheet">
-
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
   <style>
-    /* TED-Style Custom CSS */
     :root {
-      --ted-red: #E62B1E;
-      --pure-white: #ffffff;
+      --primary-red: #E62B1E;
+      --dark-bg: #0a0a0a;
+      --text-primary: #ffffff;
+      --text-secondary: #b0b0b0;
+      --text-muted: #666666;
     }
 
-    body { background-color: #000; }
+    body { background-color: var(--dark-bg); }
 
     .reveal h1, .reveal h2, .reveal h3 {
       font-family: 'Oswald', sans-serif;
       text-transform: uppercase;
       font-weight: 700;
-      margin-bottom: 20px;
+      letter-spacing: 0.05em;
+      line-height: 1.2;
+      color: var(--text-primary);
     }
 
-    .reveal p {
-      font-family: 'Open Sans', sans-serif;
-      font-size: clamp(1em, 2vw, 1.2em);
-      font-weight: 300;
-      line-height: 1.6;
-    }
+    .reveal h1 { font-size: clamp(2em, 4.5vw, 3em) !important; margin-bottom: 0.8em; }
+    .reveal h2 { font-size: clamp(1.3em, 3vw, 1.8em) !important; margin-bottom: 0.6em; font-weight: 600; }
+    .reveal h3 { font-size: clamp(1.1em, 2.2vw, 1.4em) !important; margin-bottom: 0.4em; font-weight: 400; text-transform: none; }
+    .reveal p { font-family: 'Open Sans', sans-serif; font-size: clamp(1em, 2vw, 1.2em); line-height: 1.6; color: var(--text-secondary); }
 
-    /* Ensure sections fit on screen - Compact */
     .reveal .slides section {
-      padding: 20px 30px;
-      box-sizing: border-box;
+      padding: 2rem 3rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .slide-content {
+      display: grid;
+      grid-template-rows: auto 1fr;
+      gap: 2.5rem;
+      width: 100%;
+      max-width: 1100px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .slide-text {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .image-placeholder {
+      width: 100%;
+      max-width: 700px;
+      height: 380px;
+      margin: 0 auto;
+      background: rgba(255,255,255,0.03);
+      border: 2px solid rgba(230, 43, 30, 0.2);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       overflow: hidden;
     }
 
-    /* Reduce all margins in slide-content */
-    .slide-content h1,
-    .slide-content h2,
-    .slide-content h3,
-    .slide-content p {
-      margin-top: 0 !important;
-      margin-bottom: 8px !important;
+    .image-placeholder img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
 
-    .slide-content h1 {
-      margin-bottom: 10px !important;
-    }
-
-    .slide-content h2 {
-      margin-bottom: 8px !important;
-    }
-
-    .slide-content h3 {
-      margin-bottom: 6px !important;
-    }
-
-    /* Responsive headings - Smaller */
-    .reveal h1 {
-      font-size: clamp(1.5em, 3.5vw, 2.2em) !important;
-    }
-
-    .reveal h2 {
-      font-size: clamp(1.2em, 3vw, 1.8em) !important;
-    }
-
-    .reveal h3 {
-      font-size: clamp(1em, 2.2vw, 1.4em) !important;
-    }
-
-    /* The "Big Statement" Text - Smaller */
     .big-statement {
-      font-size: clamp(1.8em, 4vw, 2.5em) !important;
-      line-height: 1.2 !important;
-      text-shadow: 2px 2px 20px rgba(0,0,0,0.9);
-      word-wrap: break-word;
-      max-width: 100%;
+      font-size: clamp(2.2em, 5.5vw, 3.5em) !important;
+      line-height: 1.1 !important;
+      margin-bottom: 0.6em;
     }
 
-    /* The "Red Emphasis" text */
-    .accent { color: var(--ted-red); }
+    .accent { color: var(--primary-red); }
 
-    /* Dark overlay for text readability over images */
-    .backdrop-overlay {
-      background: rgba(0,0,0,0.5);
-      padding: 40px;
-      display: inline-block;
-      border-left: 5px solid var(--ted-red);
-    }
+    .text-secondary { color: var(--text-secondary); }
+    .text-muted { color: var(--text-muted); font-size: 0.9em; }
 
-    /* Minimal clean numbers - Smaller */
     .stat-number {
-      font-size: clamp(2.5em, 6vw, 4em) !important;
-      color: var(--ted-red);
+      font-size: clamp(3em, 7vw, 5em) !important;
+      color: var(--primary-red);
       font-weight: 700;
       font-family: 'Oswald', sans-serif;
       line-height: 1;
+      margin-bottom: 0.3em;
     }
 
     .stat-label {
-      font-size: clamp(0.9em, 1.8vw, 1.2em);
+      font-size: clamp(0.95em, 1.8vw, 1.2em);
       text-transform: uppercase;
-      letter-spacing: 3px;
-      opacity: 0.8;
+      letter-spacing: 0.15em;
+      opacity: 0.9;
     }
 
-    /* Animations for young audiences */
-    .fade-in {
-      animation: fadeIn 1s ease-in;
+    .stats-container {
+      display: flex;
+      justify-content: center;
+      gap: 4rem;
+      margin: 2rem 0;
     }
 
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    .pulse {
-      animation: pulse 2s infinite;
-    }
-
-    @keyframes pulse {
-      0%, 100% { transform: scale(1); }
-      50% { transform: scale(1.05); }
-    }
-
-    /* Question boxes for engagement - Responsive */
-    .question-box {
-      background: rgba(230, 43, 30, 0.2);
-      border: 2px solid var(--ted-red);
-      padding: clamp(15px, 3vw, 30px);
-      border-radius: 10px;
-      margin: clamp(15px, 3vw, 30px) 0;
-      font-size: clamp(1em, 2vw, 1.3em);
-      max-width: 100%;
-      box-sizing: border-box;
-    }
-
-    /* Interactive elements - Responsive */
-    .highlight-box {
-      background: rgba(230, 43, 30, 0.1);
-      padding: clamp(15px, 2vw, 20px);
-      border-left: 5px solid var(--ted-red);
-      margin: clamp(15px, 2vw, 20px) 0;
-      font-size: clamp(1em, 1.8vw, 1.2em);
-      max-width: 100%;
-      box-sizing: border-box;
-    }
-
-    /* Call to action */
-    .cta {
-      background: var(--ted-red);
-      color: white;
-      padding: 20px 40px;
-      display: inline-block;
-      border-radius: 5px;
-      font-size: 1.4em;
-      font-weight: bold;
-      margin-top: 30px;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-    }
-
-    /* Timeline visual */
-    .timeline-item {
-      opacity: 0;
-      animation: slideIn 0.8s ease-out forwards;
-    }
-
-    .timeline-item:nth-child(1) { animation-delay: 0.2s; }
-    .timeline-item:nth-child(2) { animation-delay: 0.4s; }
-    .timeline-item:nth-child(3) { animation-delay: 0.6s; }
-
-    @keyframes slideIn {
-      from {
-        opacity: 0;
-        transform: translateX(-50px);
-      }
-      to {
-        opacity: 1;
-        transform: translateX(0);
-      }
-    }
-
-    /* Fullscreen hint */
     .fullscreen-hint {
       position: fixed;
       bottom: 20px;
       right: 20px;
-      background: rgba(0,0,0,0.7);
+      background: rgba(0,0,0,0.8);
       color: white;
-      padding: 10px 15px;
-      border-radius: 5px;
-      font-size: 0.9em;
-      z-index: 1000;
-      opacity: 0.7;
-    }
-
-    /* Image placeholder area - Smaller */
-    .image-placeholder {
-      width: 100%;
-      max-width: 600px;
-      height: 250px;
-      margin: 15px auto 0;
-      background: rgba(255,255,255,0.1);
-      border: 2px dashed rgba(230, 43, 30, 0.5);
+      padding: 12px 18px;
       border-radius: 8px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: rgba(255,255,255,0.5);
-      font-size: 0.9em;
-      text-align: center;
-      padding: 15px;
-      box-sizing: border-box;
-    }
-
-    .image-placeholder img {
-      max-width: 100%;
-      max-height: 100%;
-      object-fit: contain;
-      border-radius: 5px;
-    }
-
-    /* Slide content container - Compact */
-    .slide-content {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      min-height: 100%;
-      padding: 20px;
-      box-sizing: border-box;
-      overflow: hidden;
-    }
-
-    /* Two column layout for image + text */
-    .slide-two-column {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 40px;
-      align-items: center;
-      width: 100%;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    @media (max-width: 768px) {
-      .slide-two-column {
-        grid-template-columns: 1fr;
-      }
+      font-size: 0.85em;
+      z-index: 1000;
+      opacity: 0.8;
     }
   </style>
 </head>
-
 <body>
   <div class="reveal">
     <div class="slides">
-
-      <section data-background-color="#000">
+      <section data-background-color="var(--dark-bg)">
         <div class="slide-content">
-          <h1 style="font-size: clamp(1.5em, 3.5vw, 2em);">From Village Dust<br>to <span class="accent">Global Skies</span></h1>
-          <h2 style="font-size: clamp(1em, 2.5vw, 1.4em); color: #888; font-weight: 300; letter-spacing: 2px;">25 Years of Dhanush Academy</h2>
-          <h3 style="font-size: clamp(0.9em, 2vw, 1.1em); color: #666; font-weight: 300;">A Journey of Perseverance, Passion, and Purpose</h3>
-          <p style="font-size: clamp(0.75em, 1.5vw, 0.85em); opacity: 0.7;">25th Anniversary Celebration</p>
+          <div class="slide-text">
+            <h2 class="text-secondary" style="font-size: clamp(0.85em, 1.8vw, 1em); font-weight: 300; letter-spacing: 0.3em; margin-bottom: 1.5rem;">25 YEARS OF DHANUSH ACADEMY</h2>
+            <h1>From Village Dust<br>to <span class="accent">Global Skies</span></h1>
+            <h3 class="text-secondary" style="margin-top: 1rem; font-weight: 300;">A Journey of Perseverance, Passion, and Purpose</h3>
+            <p class="text-muted" style="margin-top: 0.5rem;">25th Anniversary Celebration</p>
+          </div>
           <div class="image-placeholder">
-            <img src="images/slide1.png" alt="Slide 1 Image" onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=\'color: rgba(255,255,255,0.3);\'>Image Placeholder<br><small>Add image: images/slide1.png</small></div>';">
+            <img src="images/slide1.png" alt="Dhanush Academy" onerror="this.style.display='none';">
           </div>
         </div>
       </section>
 
-      <section data-background-color="#000">
+      <section data-background-color="var(--dark-bg)">
         <div class="slide-content">
-          <h1 class="big-statement" style="margin-bottom: 20px;">I Was <span class="accent">You</span>.</h1>
-          <h2 style="font-size: clamp(1.2em, 3vw, 1.6em); margin-bottom: 30px; font-weight: 300;">Look around. 23 years ago, I sat exactly where you're sitting now.</h2>
+          <div class="slide-text">
+            <h1 class="big-statement">I Was <span class="accent">You</span></h1>
+            <h3 class="text-secondary" style="margin-top: 1.5rem; font-weight: 300; max-width: 700px; margin-left: auto; margin-right: auto;">Look around. 23 years ago, I sat exactly where you're sitting now.</h3>
+          </div>
           <div class="image-placeholder">
-            <img src="images/students.jpg" alt="Students" onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=\'color: rgba(255,255,255,0.3);\'>Image Placeholder<br><small>Add image: images/students.jpg</small></div>';">
+            <img src="images/students.jpg" alt="Students" onerror="this.style.display='none';">
           </div>
         </div>
-        <aside class="notes">
-          Look around. When I see you, I don't just see students. I see myself. 23 years ago, I sat in your chair at Dhanush Academy, just like you are today.
-        </aside>
       </section>
 
-      <section data-background-color="#000">
+      <section data-background-color="var(--dark-bg)">
         <div class="slide-content">
-          <h1 style="font-size: clamp(2em, 5vw, 3em);">1995</h1>
-          <h2 style="font-size: clamp(1em, 2.5vw, 1.3em); font-weight: 300;">A 10-year-old boy. A flying airplane. An impossible dream.</h2>
+          <div class="slide-text">
+            <h1 style="font-size: clamp(2.5em, 6vw, 4em);">1995</h1>
+            <h3 class="text-secondary" style="margin-top: 1rem; font-weight: 300;">A 10-year-old boy. A flying airplane. An impossible dream.</h3>
+          </div>
           <div class="image-placeholder">
-            <img src="images/village.jpg" alt="Village 1995" onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=\'color: rgba(255,255,255,0.3);\'>Image Placeholder<br><small>Add image: images/village.jpg</small></div>';">
+            <img src="images/village.jpg" alt="Village 1995" onerror="this.style.display='none';">
           </div>
         </div>
-        <aside class="notes">
-          Picture a very rural village in 1995. A 10-year-old small kid staring at a flying aeroplane in the sky, dreaming about travelling. But reality hit hard - it seemed impossible in his situation.
-        </aside>
       </section>
 
-      <section data-background-color="#111">
+      <section data-background-color="#1a1a1a">
         <div class="slide-content">
-          <h1 class="big-statement" style="color: #555; margin-bottom: 20px;">"It's Impossible."</h1>
-          <h2 style="font-size: clamp(0.95em, 2vw, 1.2em); font-weight: 300; line-height: 1.6;">
-            ✗ Self-doubt<br>
-            ✗ No encouragement<br>
-            ✗ No one from the village had studied abroad<br>
-            ✗ The ceiling felt too low
-          </h2>
-          <h3 style="font-size: clamp(0.9em, 1.8vw, 1.1em); font-weight: 300;">Have you ever felt this way?</h3>
+          <div class="slide-text">
+            <h1 class="big-statement" style="color: #888;">"It's Impossible"</h1>
+            <h3 class="text-secondary" style="margin-top: 1.5rem; font-weight: 300; line-height: 1.8;">
+              ✗ Self-doubt<br>
+              ✗ No encouragement<br>
+              ✗ No one from the village had studied abroad<br>
+              ✗ The ceiling felt too low
+            </h3>
+            <p class="text-muted" style="margin-top: 1.5rem;">Have you ever felt this way?</p>
+          </div>
           <div class="image-placeholder">
-            <img src="images/impossible.jpg" alt="Impossible" onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=\'color: rgba(255,255,255,0.3);\'>Image Placeholder<br><small>Add image: images/impossible.jpg</small></div>';">
+            <img src="images/impossible.jpg" alt="Impossible" onerror="this.style.display='none';">
           </div>
         </div>
-        <aside class="notes">
-          Reality hit hard. Self-doubt crept in. There was a lack of encouragement - no one from that village or around had ever studied abroad. The dream seemed unreachable.
-        </aside>
       </section>
 
-      <section data-background-color="#000">
+      <section data-background-color="var(--dark-bg)">
         <div class="slide-content">
-          <h2 style="font-size: clamp(1em, 2.5vw, 1.3em); font-weight: 300;">23 Years Ago</h2>
-          <h1 class="big-statement">Dr. Srinivas<br>Ignited the <span class="accent">Fire</span></h1>
-          <h3 style="font-size: clamp(0.9em, 1.8vw, 1.1em); font-weight: 300;">"Anyone can achieve anything if they want"</h3>
+          <div class="slide-text">
+            <h2 class="text-secondary" style="font-weight: 300;">23 Years Ago</h2>
+            <h1 class="big-statement">Dr. Srinivas<br>Ignited the <span class="accent">Fire</span></h1>
+            <h3 class="text-secondary" style="margin-top: 1rem; font-weight: 300; font-style: italic;">"Anyone can achieve anything if they want"</h3>
+          </div>
           <div class="image-placeholder">
-            <img src="images/teacher.jpg" alt="Dr. Srinivas" onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=\'color: rgba(255,255,255,0.3);\'>Image Placeholder<br><small>Add image: images/teacher.jpg</small></div>';">
+            <img src="images/teacher.jpg" alt="Dr. Srinivas" onerror="this.style.display='none';">
           </div>
         </div>
-        <aside class="notes">
-          Then came Dr. Srinivas, the founder of Dhanush Academy. He didn't just teach - he ignited a fire. He showed that anyone can achieve anything if they want. He turned "Impossible" into "What If?"
-        </aside>
       </section>
 
       <section data-background-color="#E62B1E">
         <div class="slide-content">
-          <div style="display: flex; justify-content: center; gap: clamp(30px, 8vw, 60px); align-items: center; flex-wrap: wrap;">
-            <div>
-              <div class="stat-number" style="color: white;">9</div>
-              <div class="stat-label" style="color: white;">Years</div>
+          <div class="slide-text">
+            <div class="stats-container">
+              <div>
+                <div class="stat-number" style="color: white;">9</div>
+                <div class="stat-label" style="color: white;">Years</div>
+              </div>
+              <div>
+                <div class="stat-number" style="color: white;">4</div>
+                <div class="stat-label" style="color: white;">Attempts</div>
+              </div>
             </div>
-            <div>
-              <div class="stat-number" style="color: white;">4</div>
-              <div class="stat-label" style="color: white;">Attempts</div>
-            </div>
+            <h3 style="color: white; margin-top: 1.5rem; font-weight: 300;">Before the PhD</h3>
           </div>
-          <h2 style="color: white; font-size: clamp(0.9em, 1.8vw, 1.1em); font-weight: 300;">Before the PhD.</h2>
           <div class="image-placeholder" style="background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.3);">
-            <img src="images/struggle.jpg" alt="Struggle" onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=\'color: rgba(255,255,255,0.5);\'>Image Placeholder<br><small>Add image: images/struggle.jpg</small></div>';">
+            <img src="images/struggle.jpg" alt="Struggle" onerror="this.style.display='none';">
           </div>
         </div>
-        <aside class="notes">
-          It wasn't easy. 9 years of struggle after my masters. 4 attempts at the PhD. I wanted to quit. But I had a reason to keep going - a strong motivation that sustained my passion.
-        </aside>
       </section>
 
-      <section data-background-color="#000">
+      <section data-background-color="var(--dark-bg)">
         <div class="slide-content">
-          <h1 style="font-size: clamp(1.4em, 3.5vw, 2em);">Driven by <span class="accent">My Cousin Sister</span></h1>
-          <h2 style="font-size: clamp(1em, 2.5vw, 1.4em); font-weight: 300; opacity: 0.8;">Affected by Unknown Disease</h2>
-          <h3 style="font-size: clamp(0.9em, 1.8vw, 1.1em); font-weight: 300;">She became my inspiration to develop therapies for rare diseases</h3>
+          <div class="slide-text">
+            <h1>Driven by <span class="accent">My Cousin Sister</span></h1>
+            <h2 class="text-secondary" style="margin-top: 0.8rem; font-weight: 300;">Affected by Unknown Disease</h2>
+            <h3 class="text-secondary" style="margin-top: 1rem; font-weight: 300;">She became my inspiration to develop therapies for rare diseases</h3>
+          </div>
           <div class="image-placeholder">
-            <img src="images/family.jpg" alt="Family" onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=\'color: rgba(255,255,255,0.3);\'>Image Placeholder<br><small>Add image: images/family.jpg</small></div>';">
+            <img src="images/family.jpg" alt="Family" onerror="this.style.display='none';">
           </div>
         </div>
-        <aside class="notes">
-          My cousin sister's battle with an unknown rare disease gave me my purpose. To sustain passion, you need strong motivation - and she was mine. I didn't just study science; I wanted to weaponize it against suffering.
-        </aside>
       </section>
 
-      <section data-background-color="#000">
+      <section data-background-color="var(--dark-bg)">
         <div class="slide-content">
-          <h2 style="font-size: clamp(1em, 2.5vw, 1.3em); font-weight: 300;">Today</h2>
-          <h1 class="big-statement">GERMANY.</h1>
-          <h3 style="font-size: clamp(0.9em, 1.8vw, 1.1em); font-weight: 300;">Scientist. PhD. Developing therapeutics for rare diseases.</h3>
-          <p style="opacity: 0.8; font-size: clamp(0.85em, 1.6vw, 1em);">Solid foundation. Living the dream.</p>
+          <div class="slide-text">
+            <h2 class="text-secondary" style="font-weight: 300;">Today</h2>
+            <h1 class="big-statement">GERMANY</h1>
+            <h3 class="text-secondary" style="margin-top: 1rem; font-weight: 300;">Scientist. PhD. Developing therapeutics for rare diseases.</h3>
+            <p class="text-muted" style="margin-top: 0.8rem;">Solid foundation. Living the dream.</p>
+          </div>
           <div class="image-placeholder">
-            <img src="images/germany.jpg" alt="Germany" onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=\'color: rgba(255,255,255,0.3);\'>Image Placeholder<br><small>Add image: images/germany.jpg</small></div>';">
+            <img src="images/germany.jpg" alt="Germany" onerror="this.style.display='none';">
           </div>
         </div>
-        <aside class="notes">
-          Today, that boy from the rural village is a scientist in Germany. I achieved my PhD at the 4th attempt, after 9 years of struggle. I am living the dream I once thought was impossible. The foundation is now solid.
-        </aside>
       </section>
 
-      <section data-background-color="#000">
+      <section data-background-color="var(--dark-bg)">
         <div class="slide-content">
-          <h1 class="big-statement">One Child.</h1>
-          <h2 style="font-size: clamp(1em, 2.5vw, 1.3em); font-weight: 300;">2 years old. Rare disease. Fighting for life.</h2>
-          <h3 class="accent" style="font-weight: bold; font-size: clamp(1em, 2.2vw, 1.3em);">In the next 5 years,<br>I hope to be part of saving them.</h3>
+          <div class="slide-text">
+            <h1 class="big-statement">One Child</h1>
+            <h3 class="text-secondary" style="margin-top: 1rem; font-weight: 300;">2 years old. Rare disease. Fighting for life.</h3>
+            <h2 class="accent" style="margin-top: 1.5rem; font-weight: 600;">In the next 5 years,<br>I hope to be part of saving them.</h2>
+          </div>
           <div class="image-placeholder">
-            <img src="images/research.jpg" alt="Research" onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=\'color: rgba(255,255,255,0.3);\'>Image Placeholder<br><small>Add image: images/research.jpg</small></div>';">
+            <img src="images/research.jpg" alt="Research" onerror="this.style.display='none';">
           </div>
         </div>
-        <aside class="notes">
-          Right now, I am in the process of developing therapeutics for a 2-year-old child with a rare disease. In the next 5 years, I hope to be part of saving that kid's life. This is not just a job - it's a calling.
-        </aside>
       </section>
 
-      <section data-background-color="#000">
+      <section data-background-color="var(--dark-bg)">
         <div class="slide-content">
-          <h1 style="font-size: clamp(1.5em, 4vw, 2.2em); line-height: 1.2;">
-            YOUR GEOGRAPHY<br>IS NOT YOUR<br><span class="accent">DESTINY.</span>
-          </h1>
-          <h2 style="font-size: clamp(0.9em, 1.8vw, 1.1em); line-height: 1.6;">
-            ✓ Self-doubt lies<br>
-            ✓ Passion leads<br>
-            ✓ Failure is part of the journey<br>
-            ✓ Find your "WHY"
-          </h2>
-          <h3 style="font-size: clamp(1em, 2.2vw, 1.3em); text-align: center;" class="accent pulse">
-            "Anyone can achieve anything if they want"
-          </h3>
+          <div class="slide-text">
+            <h1 style="font-size: clamp(1.8em, 4.5vw, 2.8em); line-height: 1.3;">
+              YOUR GEOGRAPHY<br>IS NOT YOUR<br><span class="accent">DESTINY</span>
+            </h1>
+            <h3 class="text-secondary" style="margin-top: 1.5rem; font-weight: 300; line-height: 1.8;">
+              ✓ Self-doubt lies<br>
+              ✓ Passion leads<br>
+              ✓ Failure is part of the journey<br>
+              ✓ Find your "WHY"
+            </h3>
+            <p class="accent" style="margin-top: 1.5rem; font-size: clamp(1.1em, 2.2vw, 1.3em); font-weight: 600; font-style: italic;">"Anyone can achieve anything if they want"</p>
+          </div>
           <div class="image-placeholder">
-            <img src="images/geography.jpg" alt="Geography" onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=\'color: rgba(255,255,255,0.3);\'>Image Placeholder<br><small>Add image: images/geography.jpg</small></div>';">
+            <img src="images/geography.jpg" alt="Geography" onerror="this.style.display='none';">
           </div>
         </div>
       </section>
-        <aside class="notes">
-          Students, take this home: Your geography is not your destiny. Self-doubt lies. Passion leads. Find your motivation - your "why". Remember Dr. Srinivas's lesson: Anyone can achieve anything if they want.
-        </aside>
-      </section>
 
-      <section data-background-color="#000">
+      <section data-background-color="var(--dark-bg)">
         <div class="slide-content">
-          <h1 class="big-statement fade-in" style="margin-bottom: 15px;">DREAM BIG.</h1>
-          <h2 style="font-size: clamp(1em, 2.2vw, 1.2em); font-weight: bold;">You are sitting where I sat 23 years ago.</h2>
-          <h3 style="font-size: clamp(0.9em, 1.8vw, 1.1em); font-weight: 300;">The same teacher. The same academy. The same belief.</h3>
-          <h2 class="accent pulse" style="font-size: clamp(1.1em, 2.5vw, 1.4em); font-weight: bold;">Your story is just beginning.</h2>
-          <h3 style="font-size: clamp(1em, 2vw, 1.2em); font-weight: bold; color: var(--ted-red);">
-            What's YOUR impossible dream?
-          </h3>
+          <div class="slide-text">
+            <h1 class="big-statement">DREAM BIG</h1>
+            <h3 class="text-secondary" style="margin-top: 1.5rem; font-weight: 600;">You are sitting where I sat 23 years ago.</h3>
+            <p class="text-secondary" style="margin-top: 1rem;">The same teacher. The same academy. The same belief.</p>
+            <h2 class="accent" style="margin-top: 1.5rem; font-weight: 600;">Your story is just beginning.</h2>
+            <h3 class="accent" style="margin-top: 1.5rem; font-weight: 600;">What's YOUR impossible dream?</h3>
+          </div>
           <div class="image-placeholder">
-            <img src="images/dream.jpg" alt="Dream" onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=\'color: rgba(255,255,255,0.3);\'>Image Placeholder<br><small>Add image: images/dream.jpg</small></div>';">
+            <img src="images/dream.jpg" alt="Dream" onerror="this.style.display='none';">
           </div>
         </div>
-        <aside class="notes">
-          Find your "Why". Work hard. Never give up. And remember Dr. Srinivas's lesson. You can achieve anything. Thank you, and happy 25th anniversary to Dhanush Academy!
-        </aside>
       </section>
 
-      <section data-background-color="#000">
+      <section data-background-color="var(--dark-bg)">
         <div class="slide-content">
-          <h1 style="font-size: clamp(1.8em, 4.5vw, 2.8em);">Happy 25th Anniversary</h1>
-          <h2 class="accent" style="font-size: clamp(1.5em, 3.5vw, 2.2em);">Dhanush Academy</h2>
-          <h3 style="font-size: clamp(0.9em, 1.8vw, 1.1em); opacity: 0.7; font-weight: 300;">Thank You</h3>
+          <div class="slide-text">
+            <h1 style="font-size: clamp(2em, 5vw, 3.2em);">Happy 25th Anniversary</h1>
+            <h2 class="accent" style="margin-top: 1rem; font-size: clamp(1.5em, 3.5vw, 2.5em);">Dhanush Academy</h2>
+            <p class="text-muted" style="margin-top: 1.5rem;">Thank You</p>
+          </div>
           <div class="image-placeholder">
-            <img src="images/anniversary.jpg" alt="Anniversary" onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=\'color: rgba(255,255,255,0.3);\'>Image Placeholder<br><small>Add image: images/anniversary.jpg</small></div>';">
+            <img src="images/anniversary.jpg" alt="Anniversary" onerror="this.style.display='none';">
           </div>
         </div>
       </section>
-
     </div>
   </div>
 
-  <!-- Fullscreen hint (disappears after 5 seconds) -->
   <div class="fullscreen-hint" id="fullscreen-hint">
     Press <strong>F</strong> for fullscreen | <strong>→</strong> or <strong>Space</strong> to navigate
   </div>
@@ -470,18 +319,12 @@
       hash: true,
       transition: 'convex',
       transitionSpeed: 'slow',
-      // Enable fullscreen
       embedded: false,
-      // Better for presentations
       touch: true,
       keyboard: true,
-      // Auto-advance (optional - can be disabled)
-      autoSlide: 0,
     });
 
-    // Fullscreen instructions
     document.addEventListener('keydown', function(e) {
-      // F key for fullscreen
       if (e.key === 'f' || e.key === 'F') {
         if (!document.fullscreenElement) {
           document.documentElement.requestFullscreen().catch(err => {
@@ -493,7 +336,6 @@
       }
     });
 
-    // Hide fullscreen hint after 8 seconds
     setTimeout(function() {
       const hint = document.getElementById('fullscreen-hint');
       if (hint) {
@@ -502,35 +344,7 @@
         setTimeout(() => hint.style.display = 'none', 1000);
       }
     }, 8000);
-
-    // Handle custom images with fallback
-    function loadCustomImages() {
-      const sections = document.querySelectorAll('section[data-background-image]');
-      sections.forEach(section => {
-        const customImage = section.getAttribute('data-background-image');
-        const fallbackImage = section.getAttribute('data-background-image-fallback');
-        
-        if (customImage && customImage.startsWith('images/')) {
-          // Try to load custom image
-          const img = new Image();
-          img.onload = function() {
-            // Custom image exists, use it
-            section.setAttribute('data-background-image', customImage);
-          };
-          img.onerror = function() {
-            // Custom image doesn't exist, use fallback
-            if (fallbackImage) {
-              section.setAttribute('data-background-image', fallbackImage);
-            }
-          };
-          img.src = customImage;
-        }
-      });
-    }
-
-    // Load custom images after Reveal is initialized
-    Reveal.addEventListener('ready', loadCustomImages);
-    loadCustomImages(); // Also try immediately
   </script>
 </body>
 </html>
+
